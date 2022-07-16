@@ -1,0 +1,8 @@
+@font-face {
+    font-family: Century gothic, Arial, Times New Roman;
+    src: url(sansation_light.woff);
+}
+
+.quote {
+    font-family: Century gothic;
+}

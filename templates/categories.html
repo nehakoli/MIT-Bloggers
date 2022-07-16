@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block body %}
+<h1>{{cats}}</h1>
+
+<ul>
+    {% for post in category_posts %}
+
+    <div class="card alert-dark" id="card">
+        <div class="card-body">
+            <h5 class="card-title">{{post.title}} <br>
+                <h6> {{post.author.first_name}} {{post.author.last_name}}</h6>
+            </h5>
+            <hr>
+            <p class="card-text">{{post.body|slice:'182'|safe}}</p>
+            <a href="{% url 'detail' post.pk %}" class="btn btn-dark">Open</a>
+        </div>
+    </div>
+    <br> {% endfor%}
+    <br><br>
+    <center>
+        <p class="btn btn-dark" style="background-color: rgb(52, 52, 189);">
+            <a style="color: white; text-decoration: none;" href="#">Back to top</a>
+        </p>
+    </center>
+
+    <style>
+        #card {
+            width: 85rem;
+        }
+    </style>
+    {% endblock body %}

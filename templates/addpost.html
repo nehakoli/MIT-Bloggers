@@ -1,0 +1,63 @@
+{% extends "base.html" %} {% block body %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+<div class='form-group mx-auto' style="width: 1000px;">
+    <h1 style="text-align:center;">Add Blog</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %} {{form.media}} {{form.as_p}}
+        <br> &nbsp;&nbsp;&nbsp;&nbsp;
+        <center>
+            <grid>
+                <button class="btn btn-success" style="margin-bottom: 20px; margin-right: 20px; background-color:green;">Post</button>
+                <p class="btn btn-secondary" style="border-color: rgb(52, 52, 189); background-color: rgb(52, 52, 189); margin-bottom: 20px;">
+                    <a style="color: white; text-decoration: none;" href="{% url 'landing' %}">Back</a>
+                </p>
+            </grid>
+        </center>
+    </form>
+
+</div>
+<script>
+    var name = "{{user.id}}";
+    document.getElementById('temp').value = name;
+</script>
+
+
+
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+
+<style>
+    h1 {
+        font-family: Century gothic, Sans-serif;
+        color: rgb(190, 232, 248);
+        font-weight: bolder;
+    }
+    
+    .form-group {
+        width: 1000px;
+        font-family: Century gothic, Sans-ser;
+        font-size: 20px;
+        background-color: rgb(61, 59, 59);
+        padding: 10px;
+        border-radius: 20px;
+        color: white;
+        margin-top: 15px;
+    }
+    
+    .BackButton {
+        background-color: navy;
+        margin-bottom: 500rem;
+    }
+    
+    .btn-success {
+        background-color: navy;
+        margin-bottom: 50px;
+    }
+</style>
+{% endblock body %}

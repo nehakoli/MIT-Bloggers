@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+<div class="form-group mx-auto" style="width: 1000px;">
+    {% block body %}
+    <h1>{{profile.user.first_name}} {{profile.user.last_name}}</h1>
+    <small>{{profile.user.username}}</small>
+    <br> {% if page_user.profile_pic %}
+
+    <img src="{{page_user.profile_pic.url}}" width=150 00 height=150 00 class=" rounded-circle"> {% else %}
+
+    <img src="https://iconape.com/wp-content/png_logo_vector/user-circle.png" width=1 00 height=1 00 class=" rounded-circle"> {% endif %}
+
+    <p>
+        {% if page_user.bio %} {{page_user.bio}} {% endif %}
+    </p>
+    <p>
+        {% if page_user.website_url %}
+        <a href="{{page_user.website_url}}">
+            <h3 style="text-decoration: none;">Visit my Website</h3>
+        </a>
+        {% endif %} </p>
+    <p>
+        {% if page_user.instagram_url %}
+        <a href="{{page_user.instagram_url}}">
+            <h3 style="text-decoration: none;">Check my Instagram</h3>
+        </a>
+        {% endif %}
+    </p>
+</div>
+
+
+<style>
+    .form-group {
+        width: 1000px;
+        font-family: Century gothic, Sans-ser;
+        font-size: 20px;
+        background-color: rgb(61, 59, 59);
+        padding: 10px;
+        border-radius: 20px;
+        color: white;
+        margin-top: 15px;
+    }
+    
+    h3 {
+        color: black;
+    }
+</style>
+
+{% endblock body %}

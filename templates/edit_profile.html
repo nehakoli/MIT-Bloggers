@@ -1,0 +1,66 @@
+{% extends "base.html" %} {% block body %} {% if user.id == profile.user.id %}
+
+<div class='form-group main-div mx-auto'>
+    <h1 class="heading">Edit Profile</h1>
+    <form class="mx-auto" style="text-decoration: none; width: 900px;" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}{{form.as_p}}
+        <br>
+        <center>
+            <grid>
+                <button class="btn btn-success update-profile-btn">Update Profile</button>
+                <p class="btn btn-dark back-btn">
+                    <a href="{% url 'landing' %}">Back</a>
+                </p>
+            </grid>
+        </center>
+    </form>
+</div>
+
+
+
+
+<style>
+    .form-group {
+        width: 85rem;
+    }
+    
+    h1 {
+        font-family: Century gothic, Sans-serif;
+        color: rgb(190, 232, 248);
+        font-weight: bolder;
+        text-align: center;
+    }
+    
+    .form-group {
+        width: 1000px;
+        font-size: 20px;
+        background-color: rgb(61, 59, 59);
+        padding: 10px;
+        border-radius: 20px;
+        color: white;
+        margin: 15px 0px;
+    }
+    
+    .update-profile-btn {
+        margin-bottom: 17px;
+        margin-right: 20px;
+        background-color: rgb(29, 151, 29);
+        color: white;
+    }
+    
+    .back-btn {
+        text-decoration: none;
+        background-color: rgb(52, 52, 189);
+        border-color: rgb(52, 52, 189);
+    }
+    
+    .back-btn a {
+        text-decoration: none;
+        color: white;
+    }
+</style>
+
+{% else %}
+<h1>Restricted access</h1>
+
+<a href="{% url 'landing' %}"> Home </a> {% endif %} {% endblock body %}

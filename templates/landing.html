@@ -1,0 +1,54 @@
+{% extends 'base.html' %} {% block title %} MITBloggers{% endblock title %} {% block body %} {% load static %}
+<link rel="stylesheet" href="{% static 'landingpage.css'%}">
+<!--<center>
+    <p class="quote" style="color: navy;
+    text-transform: capitalize;
+    font-size: 40px;
+    font-style: italic;
+    ">"The desire to create is one of the deepest yearnings of the human soul"</p>
+</center>-->
+<br><br>
+<center>
+    <ul>
+        {% for post in object_list%}
+        <div class="card" id="card" style="border-radius: 20px; border-color: white; border-width: 3px; width: 70rem;">
+            <div class="card-body">
+                <h5 class="card-title quote" style="color: rgb(80, 77, 77); font-weight: bolder; font-size: 35px;">{{post.title}} <br>
+                    <h6> By {{post.author.first_name}} {{post.author.last_name}}</h6>
+                </h5>
+                <hr>
+                <div style="background: linear-gradient(white, grey); color: black; border-radius: 20px; ">
+                    <p class="card-text">
+                        {% if post.header_image %}
+                        <img src=" {{post.header_image.url}} " style="height: 10rem; width: 30rem;"> <br><br> {% endif %} {{post.body|slice:'500'|safe}}
+                    </p>
+                    <a href="{% url 'detail' post.pk %}" class="btn btn-dark" style="float: right; background-color: rgb(52, 52, 189); margin-right: 20px;">Open</a>
+                </div>
+            </div>
+        </div>
+        <br> {% endfor %}
+</center>
+
+
+
+</ul>
+<center>
+    <p class="btn btn-dark" style="background-color: rgb(52, 52, 189);">
+        <a style="color: white; text-decoration: none;" href="#">Back to top</a>
+    </p>
+</center>
+
+<style>
+    #card {
+        width: 85rem;
+    }
+</style>
+{% endblock body %}
+
+
+<!--  
+  
+  <li> <a href="{% url 'detail' post.pk %}">{{post.title}}</a> || {{post.author}} <br>
+    {{post.body|slice:'75'}}
+    </li>
+-->

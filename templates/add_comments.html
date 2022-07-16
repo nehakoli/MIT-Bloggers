@@ -1,0 +1,91 @@
+{% extends "base.html" %} {% block body %} {% load static %}
+<link rel="stylesheet" href="{% static 'landingpage.css'%}">
+<div class='form-group mx-auto' style="width: 1000px;">
+    <h1 class="heading">Post your comment</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <p class="centerAlign">
+            {% csrf_token %} {{form.as_p}}
+        </p>
+        <br> &nbsp;&nbsp;&nbsp;&nbsp;
+        <center>
+            <grid>
+                <button class="btn post-btn post-success">Post</button>
+                <p class="btn btn-secondary back-btn">
+                    <a style="color: white; text-decoration: none;" href="{% url 'landing' %}">Back</a>
+                </p>
+            </grid>
+        </center>
+    </form>
+</div>
+<script>
+    var name = "{{user.first_name}} {{user.last_name}}";
+    document.getElementById('temp').value = name;
+</script>
+
+
+
+
+<br>
+<center>
+
+</center>
+<style>
+    @font-face {
+        font-family: Century gothic, Arial, Times New Roman;
+        src: url(sansation_light.woff);
+    }
+    
+    .post-btn {
+        margin-bottom: 17px;
+        margin-right: 20px;
+        background-color: rgb(29, 151, 29);
+        color: white;
+    }
+    
+    .back-btn {
+        background-color: rgb(52, 52, 189);
+        border-color: rgb(52, 52, 189);
+        color: white;
+    }
+    
+    .back-btn a {
+        color: white;
+        text-decoration: none;
+    }
+    
+    .heading {
+        font-family: Century gothic, Sans-serif;
+        color: rgb(190, 232, 248);
+        font-weight: bolder;
+        text-align: center;
+    }
+    
+    .form-group {
+        width: 1000px;
+        font-family: Century gothic, Sans-ser;
+        font-size: 20px;
+        background-color: rgb(61, 59, 59);
+        padding: 10px;
+        border-radius: 20px;
+        color: white;
+        margin-top: 15px;
+    }
+    
+    .BackButton {
+        background-color: navy;
+        margin-bottom: 500rem;
+    }
+    
+    .btn-success {
+        background-color: navy;
+        margin-bottom: 50px;
+    }
+</style>
+
+
+<style>
+    .form-group {
+        width: 85rem;
+    }
+</style>
+{% endblock body %}
