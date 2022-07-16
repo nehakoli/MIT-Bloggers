@@ -1,7 +1,7 @@
 # MIT-Bloggers
 # Mini Project 2
 
-Problem Statement -
+Problem Statement - <br>
 Everything is going online due to the pandemic. Because of this, students cannot interact with other students like their seniors. and in college days interaction with seniors and other students is necessary to share knowledge and also for self-growth. We can’t physically interact with each other, but we can interact with others virtually and share knowledge.
 So we came up with an idea to build a platform for our MIT SOE engineering students to share their knowledge of their expertise field in the form of a blog. 
 
